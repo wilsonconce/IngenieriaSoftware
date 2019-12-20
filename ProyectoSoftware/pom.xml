@@ -10,12 +10,11 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    
     <dependencies>
-    	<dependecy>
+    	<dependency>
     		<groupId>junit</groupId>
     		<version>4.11</version>
     		<scope>test</scope>
-    	</dependecy>
+    	</dependency>
     </dependencies>
 </project>
