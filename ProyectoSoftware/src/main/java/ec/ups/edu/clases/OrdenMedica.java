@@ -13,4 +13,17 @@ public class OrdenMedica {
     
     private int idOrdenMedica;
     private String tipo;
+	public int getIdOrdenMedica() {
+		return idOrdenMedica;
+	}
+	public void setIdOrdenMedica(int idOrdenMedica) {
+		this.idOrdenMedica = idOrdenMedica;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+    
 }
