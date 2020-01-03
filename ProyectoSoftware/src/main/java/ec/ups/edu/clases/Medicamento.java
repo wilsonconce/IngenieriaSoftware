@@ -11,15 +11,15 @@ package ec.ups.edu.clases;
  */
 public class Medicamento {
 
-    private int idMedicamento;
+    private String idMedicamento;
     private String nombre;
     private String dosis;
 
-    public int getIdMedicamento() {
+    public String getIdMedicamento() {
         return idMedicamento;
     }
 
-    public void setIdMedicamento(int idMedicamento) {
+    public void setIdMedicamento(String idMedicamento) {
         this.idMedicamento = idMedicamento;
     }
 

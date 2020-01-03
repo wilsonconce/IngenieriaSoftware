@@ -6,15 +6,22 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import ec.ups.edu.clases.Medicamento;
+import ec.ups.edu.controlador.ControladorMedicamentos;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VistaMedicamentos extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	public static JTextField id_medicamento;
+	public static JTextField nombre_medicamento;
+	public static JTextField dosis_medicamento;
 
 	/**
 	 * Launch the application.
@@ -43,20 +50,20 @@ public class VistaMedicamentos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(140, 23, 116, 22);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		id_medicamento = new JTextField();
+		id_medicamento.setBounds(140, 23, 116, 22);
+		contentPane.add(id_medicamento);
+		id_medicamento.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(140, 58, 116, 22);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		nombre_medicamento = new JTextField();
+		nombre_medicamento.setBounds(140, 58, 116, 22);
+		contentPane.add(nombre_medicamento);
+		nombre_medicamento.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(140, 93, 116, 22);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		dosis_medicamento = new JTextField();
+		dosis_medicamento.setBounds(140, 93, 116, 22);
+		contentPane.add(dosis_medicamento);
+		dosis_medicamento.setColumns(10);
 		
 		JLabel lblId = new JLabel("Id:");
 		lblId.setBounds(12, 26, 56, 16);
@@ -69,5 +76,25 @@ public class VistaMedicamentos extends JFrame {
 		JLabel lblDosis = new JLabel("Dosis:");
 		lblDosis.setBounds(12, 96, 56, 16);
 		contentPane.add(lblDosis);
+		
+		JButton btnGuardarMedicamento = new JButton("Guardar");
+		btnGuardarMedicamento.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				guardarMedicamentoRecetado();
+			}
+		});
+		btnGuardarMedicamento.setBounds(268, 92, 97, 25);
+		contentPane.add(btnGuardarMedicamento);
+	}
+
+	protected void guardarMedicamentoRecetado() {
+		// TODO Auto-generated method stub
+		ControladorMedicamentos c = new ControladorMedicamentos();
+		Medicamento objetoMedicamento = new Medicamento();
+		objetoMedicamento.setIdMedicamento(id_medicamento.getText());
+		objetoMedicamento.setNombre(nombre_medicamento.getText());
+		objetoMedicamento.setDosis(dosis_medicamento.getText());
+		c.insertar(objetoMedicamento);
 	}
 }
