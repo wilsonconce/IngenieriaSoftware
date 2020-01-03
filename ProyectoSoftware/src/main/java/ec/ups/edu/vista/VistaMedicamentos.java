@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import ec.ups.edu.clases.Medicamento;
-import ec.ups.edu.controlador.ControladorMedicamentos;
+
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -90,11 +90,11 @@ public class VistaMedicamentos extends JFrame {
 
 	protected void guardarMedicamentoRecetado() {
 		// TODO Auto-generated method stub
-		ControladorMedicamentos c = new ControladorMedicamentos();
+		/*ControladorMedicamentos c = new ControladorMedicamentos();
 		Medicamento objetoMedicamento = new Medicamento();
 		objetoMedicamento.setIdMedicamento(id_medicamento.getText());
 		objetoMedicamento.setNombre(nombre_medicamento.getText());
 		objetoMedicamento.setDosis(dosis_medicamento.getText());
-		c.insertar(objetoMedicamento);
+		c.insertar(objetoMedicamento);*/
 	}
 }
