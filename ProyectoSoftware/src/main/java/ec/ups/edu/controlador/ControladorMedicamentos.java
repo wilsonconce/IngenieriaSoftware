@@ -1,5 +1,11 @@
 package ec.ups.edu.controlador;
 
-public class ControladorMedicamentos {
+import ec.ups.edu.clases.Medicamento;
+
+public class ControladorMedicamentos<ControladorMedicamentos> {
+	
+	
+
+	
 
 }
