@@ -7,7 +7,10 @@ package citac.medicas.Vista;
 
 /**
  *
- * @author chita
+ * @author Wilson Conce
+ * @author David Egas
+ * @author Leandro Leon
+ * @author Bryan Pintado
  */
 public class Ventana extends javax.swing.JFrame {
 

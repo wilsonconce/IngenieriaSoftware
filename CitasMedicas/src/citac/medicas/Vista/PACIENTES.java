@@ -9,7 +9,10 @@ import java.awt.event.KeyEvent;
 
 /**
  *
- * @author chita
+* @author Wilson Conce
+ * @author David Egas
+ * @author Leandro Leon
+ * @author Bryan Pintado
  */
 public class PACIENTES extends javax.swing.JInternalFrame {
 
