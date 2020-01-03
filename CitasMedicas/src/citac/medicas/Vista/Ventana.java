@@ -5,6 +5,11 @@
  */
 package citac.medicas.Vista;
 
+import java.awt.Image;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author chita
@@ -42,9 +47,11 @@ public class Ventana extends javax.swing.JFrame {
         jMenuItem10 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/citas/medicas/Logica/p1.jpg"))); // NOI18N
-
+        
+      //  ImageIcon iconobtn = new ImageIcon("/citas/medicas/Logica/p1.jpg");
+    	//Icon iconmg =new ImageIcon(iconobtn.getImage().getScaledInstance(300,150, Image.SCALE_SMOOTH));
+       jLabel1.setIcon( new javax.swing.ImageIcon(getClass().getResource("/citas/medicas/Logica/p1.jpg"))); // NOI18N
+        //jLabel1.setBounds(20, 15, 300, 150);
         jDesktopPane2.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
