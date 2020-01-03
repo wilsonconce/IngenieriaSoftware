@@ -1,4 +1,4 @@
-package ec.ups.edu.controlador;
+package ec.ups.edu.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import ec.ups.edu.clases.JPAUtil;
-import ec.ups.edu.clases.Medicamento;
+import ec.ups.edu.modelo.JPAUtil;
+import ec.ups.edu.modelo.Medicamento;
 
 
 

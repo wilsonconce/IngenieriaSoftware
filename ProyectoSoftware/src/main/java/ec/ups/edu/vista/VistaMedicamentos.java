@@ -7,8 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import ec.ups.edu.clases.Medicamento;
-
+import ec.ups.edu.modelo.Medicamento;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;

@@ -1,4 +1,4 @@
-package ec.ups.edu.clases;
+package ec.ups.edu.modelo;
 
 
 
