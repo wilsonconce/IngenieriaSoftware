@@ -19,7 +19,6 @@ public class Personas {
     private String direccion;
     private String telefono;
     private String correo;
-    private String password;
     private String roll;
     private Date fecha;
 
@@ -79,13 +78,7 @@ public class Personas {
         this.correo = correo;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  
 
     public Date getFecha() {
         return fecha;
