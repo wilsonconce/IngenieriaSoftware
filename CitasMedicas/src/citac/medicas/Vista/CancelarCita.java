@@ -6,8 +6,10 @@
 package citac.medicas.Vista;
 
 /**
- *
- * @author chita
+* @author Wilson Conce
+ * @author David Egas
+ * @author Leandro Leon
+ * @author Bryan Pintado
  */
 public class CancelarCita extends javax.swing.JInternalFrame {
 
@@ -52,7 +54,7 @@ public class CancelarCita extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CANCELAR CITA MÉDICA");
+        jLabel1.setText("CANCELAR CITA M\u00C9DICA");
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -65,7 +67,7 @@ public class CancelarCita extends javax.swing.JInternalFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("NÚMERO");
+        jLabel4.setText("N\u00DAMERO");
         jLabel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -94,7 +96,7 @@ public class CancelarCita extends javax.swing.JInternalFrame {
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("CEDULA PACIENTE");
+        jLabel12.setText("C\u00C9DULA PACIENTE");
         jLabel12.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PENDIENTE", "REALIZADA", "CANCELADA", " " }));

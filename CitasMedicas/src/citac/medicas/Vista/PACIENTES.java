@@ -9,7 +9,10 @@ import java.awt.event.KeyEvent;
 
 /**
  *
- * @author chita
+* @author Wilson Conce
+ * @author David Egas
+ * @author Leandro Leon
+ * @author Bryan Pintado
  */
 public class PACIENTES extends javax.swing.JInternalFrame {
 
@@ -75,12 +78,12 @@ public class PACIENTES extends javax.swing.JInternalFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("CÉDULA");
+        jLabel4.setText("C\u00C9DULA");
         jLabel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("DIRECCIÓN");
+        jLabel5.setText("DIRECCI\u00D3N");
         jLabel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -95,12 +98,12 @@ public class PACIENTES extends javax.swing.JInternalFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("TELÉFONO");
+        jLabel8.setText("TELEFONO");
         jLabel8.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("GÉNERO");
+        jLabel9.setText("G\u00C9NERO");
         jLabel9.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -175,7 +178,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("CONTRASEÑA");
+        jLabel14.setText("CONTRASE\u00D1A");
         jLabel14.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         txtClave.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -192,7 +195,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("REPETIR CONTRASEÑA");
+        jLabel16.setText("REPETIR CONTRASE\u00D1A");
         jLabel16.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
