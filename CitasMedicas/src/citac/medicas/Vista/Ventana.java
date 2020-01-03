@@ -108,9 +108,9 @@ public class Ventana extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu9);
 
-        jMenu10.setText("Médicos");
+        jMenu10.setText("M\u00E9dicos");
 
-        jMenuItem10.setText("Médicos");
+        jMenuItem10.setText("M\u00E9dicos");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);
