@@ -31,7 +31,7 @@ public class Conexion {
         // Nombre de usuario
         public String username = "root";
         // Clave de usuario
-        public String password = "";
+        public String password = "root";
         // Variable para la conexion con la base de datos
         static Connection conn = null;    
     
@@ -41,7 +41,7 @@ public class Conexion {
                 conn = DriverManager.getConnection(url, username, password);
                 
                 if(conn != null){
-                    //JOptionPane.showMessageDialog(null, "CONEXION EXITOSA");
+                    JOptionPane.showMessageDialog(null, "CONEXION EXITOSA");
                 }
             } catch (ClassNotFoundException | SQLException e) {
                 JOptionPane.showMessageDialog(null, "NO CONECTADO, OCURRIO UN ERROR: " + e.getMessage());
