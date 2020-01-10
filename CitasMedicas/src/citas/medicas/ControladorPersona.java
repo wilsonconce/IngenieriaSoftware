@@ -1,5 +1,6 @@
 package citas.medicas;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,20 +14,25 @@ public class ControladorPersona {
 	
 
 	public void insertarPersona(Persona persona) {
-    Conexion cnx = new Conexion();
-	    
-	    Statement s;
-	    ResultSet rs = null;
+   // Conexion cnx = new Conexion();
+    Conexion con = null;
+	 
 	
-		  String INSERT_TBL_PERSONA = "INSERT INTO PERSONA"
-	                + "	(PER_CEDULA, PER_NOMBRE, PER_APELLIDO, PER_EDAD, "
-	                + "PER_DIRECCIION, PER_TELEFONO) "
-	                + "VALUES"
-	                + "	(?, ?, ?, ?, ?, ?);";
+//		  String INSERT_TBL_PERSONA = "INSERT INTO PERSONA"
+//	                + "	(PER_CEDULA, PER_NOMBRE, PER_APELLIDO, PER_EDAD, "
+//	                + "PER_DIRECCIION, PER_TELEFONO) "
+//	                + "VALUES"
+//	                + "	(?, ?, ?, ?, ?, ?);";
+		  String INSERT_TBL_PERSONA = "INSERT INTO persona ( per_cedula, per_nombre, per_apellido, per_edad, per_direccion, per_telefono)"
+					+ "VALUES (?,?,?,?,?,?);";
 
 	        try {
 	      
-	            PreparedStatement insert_persona = cnx.conexion().prepareStatement(INSERT_TBL_PERSONA);
+	        	con = new Conexion();
+				Connection reg = con.getConnection();
+
+				
+				PreparedStatement insert_persona = (PreparedStatement) reg.prepareStatement(INSERT_TBL_PERSONA);
 	         
 	            insert_persona.setString(1, persona.getPer_cedula());
 	            insert_persona.setString(2, persona.getPer_nombre());
@@ -36,9 +42,13 @@ public class ControladorPersona {
 	            insert_persona.setString(6, persona.getPer_telefono());
 	            insert_persona.execute();
 
-	        } catch (SQLException ex) {
-	            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
-	        }
-	}
+	        } catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			} finally {
+				con.desconectar();
+			}
+
+		}
 	}
 
