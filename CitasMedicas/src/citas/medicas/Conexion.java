@@ -1,63 +1,48 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package citas.medicas;
+
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
-/**
- *
- * @author Wilson Conce
- * @author David Egas
- * @author Leandro Leon
- * @author Bryan Pintado
- */
+
+
 public class Conexion {
-     // Librería de MySQL
-        public String driver = "com.mysql.cj.jdbc.Driver";
-        // Nombre de la base de datos
-        public String database = "citasmedicas";
-        // Host
-        public String hostname = "localhost"; //localhost";
-        // Puerto
-        public String port = "3306";
-        // Ruta de nuestra base de datos (desactivamos el uso de SSL con "?useSSL=false")
-        public String url = "jdbc:mysql://" + hostname + ":" + port + "/" + database + "?use Timezone=true&serverTimezone=UTC";
-        // Nombre de usuario
-        public String username = "root";
-        // Clave de usuario
-        public String password = "root";
-        // Variable para la conexion con la base de datos
-        static Connection conn = null;    
-    
-    public Connection conexion(){
-        try {
-                Class.forName(driver);
-                conn = DriverManager.getConnection(url, username, password);
-                
-                if(conn != null){
-                    JOptionPane.showMessageDialog(null, "CONEXION EXITOSA");
-                }
-            } catch (ClassNotFoundException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "NO CONECTADO, OCURRIO UN ERROR: " + e.getMessage());
-            }
-        return conn;
-    }//Fin de la funcion conexion
-    
-    public static int terminarConexionMysql() throws SQLException {
-        try {
-            if(conn != null){
-               conn.close();
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "NO CONECTADO, OCURRIO UN ERROR: " + e.getMessage());
-        }
-        
-        return 0;
-    }//Fin de la funcion terminarConexionMysql
+
+	public static Connection conn;
+	private static final String driver = "com.mysql.jdbc.Driver";
+	private static final String user = "root";
+	private static final String password = "";
+	private static final String url = "jdbc:mysql://localhost/citasmedicas";
+       // private static final String server2 = "jdbc:mysql://192.168.1.2:3306/computacion?serverTimezone=UTC";
+	//private static final String server = "jdbc:mysql://192.168.2.2:3306/computacion?serverTimezone=UTC";
+	
+	public Conexion () throws SQLException{
+		conn = null;
+		
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url, user, password);
+			if ( conn != null ){
+				System.out.println("Conexion establecida..");
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			
+			System.out.println("error al conectar" + e);
+		}
+	}
+	
+	
+	public  Connection getConnection(){
+		return conn;
+	}
+	
+	public void desconectar(){
+		conn = null;
+		if (conn == null){
+			System.out.println("Conexion terminada...");
+		}
+	}
 }
