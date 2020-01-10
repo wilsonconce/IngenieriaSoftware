@@ -108,7 +108,7 @@ public class Ventana extends javax.swing.JFrame {
 
         jMenu9.setText("Usuarios");
 
-        jMenuItem9.setText("Usuarios");
+        jMenuItem9.setText("Agregar Usuario");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem9ActionPerformed(evt);

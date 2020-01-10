@@ -6,6 +6,18 @@
 package citac.medicas.Vista;
 
 import java.awt.event.KeyEvent;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+import citas.medicas.ControladorPersona;
+import modelo.Persona;
+
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -33,30 +45,33 @@ public class PACIENTES extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel1.setBounds(0, 0, 772, 43);
         jLabel3 = new javax.swing.JLabel();
+        jLabel3.setBounds(12, 93, 71, 33);
         jLabel4 = new javax.swing.JLabel();
+        jLabel4.setBounds(12, 50, 71, 33);
         jLabel5 = new javax.swing.JLabel();
+        jLabel5.setBounds(12, 179, 71, 33);
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jLabel6.setBounds(12, 139, 71, 33);
         txtCedula = new javax.swing.JTextField();
+        txtCedula.setBounds(88, 53, 124, 27);
         txtNombres = new javax.swing.JTextField();
-        txtFecha = new javax.swing.JTextField();
-        txtGenero = new javax.swing.JTextField();
-        txtSangre = new javax.swing.JTextField();
-        txtTelefono = new javax.swing.JTextField();
+        txtNombres.setBounds(88, 96, 427, 27);
         txtDireccion = new javax.swing.JTextField();
+        txtDireccion.setBounds(88, 182, 427, 27);
         txtApellidos = new javax.swing.JTextField();
+        txtApellidos.setBounds(88, 142, 427, 27);
         btnRegistrar = new javax.swing.JButton();
+        btnRegistrar.setBounds(636, 346, 115, 25);
+        btnRegistrar.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		guardarPersona();        	
+        	}
+        });
         btnCancelar = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        txtClave = new javax.swing.JTextField();
-        txtClave2 = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
+        btnCancelar.setBounds(436, 346, 93, 25);
 
         setClosable(true);
         setIconifiable(true);
@@ -91,26 +106,6 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         jLabel6.setText("APELLIDOS");
         jLabel6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("FECHA DE NACIMIENTO");
-        jLabel7.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("TELEFONO");
-        jLabel8.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("G\u00C9NERO");
-        jLabel9.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("TIPO DE SANGRE");
-        jLabel10.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
         txtCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCedulaActionPerformed(evt);
@@ -125,30 +120,6 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         txtNombres.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNombresKeyPressed(evt);
-            }
-        });
-
-        txtFecha.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtFechaKeyPressed(evt);
-            }
-        });
-
-        txtGenero.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtGeneroKeyPressed(evt);
-            }
-        });
-
-        txtSangre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtSangreKeyPressed(evt);
-            }
-        });
-
-        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtTelefonoKeyPressed(evt);
             }
         });
 
@@ -175,154 +146,77 @@ public class PACIENTES extends javax.swing.JInternalFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("CONTRASE\u00D1A");
-        jLabel14.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        txtClave.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtClaveKeyPressed(evt);
-            }
-        });
-
-        txtClave2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtClave2KeyPressed(evt);
-            }
-        });
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("REPETIR CONTRASE\u00D1A");
-        jLabel16.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtUsuarioKeyPressed(evt);
-            }
-        });
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("USUARIO");
-        jLabel15.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSangre, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtNombres, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtDireccion)
-                            .addComponent(txtApellidos)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtUsuario))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnCancelar)
-                                        .addGap(107, 107, 107)
-                                        .addComponent(btnRegistrar))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtClave2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(21, 21, 21)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSangre, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtClave2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRegistrar)
-                    .addComponent(btnCancelar))
-                .addContainerGap())
-        );
+        
+        JLabel lblNewLabel = new JLabel("Edad");
+        lblNewLabel.setBounds(12, 229, 71, 15);
+        lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 12));
+        
+        txtEdad = new JTextField();
+        txtEdad.setBounds(88, 225, 116, 27);
+        txtEdad.setColumns(10);
+        
+        JLabel lblDireccin = new JLabel("Direcci\u00F3n");
+        lblDireccin.setBounds(12, 268, 59, 16);
+        lblDireccin.setFont(new Font("Tahoma", Font.BOLD, 13));
+        
+        texDire = new JTextField();
+        texDire.setBounds(88, 265, 428, 27);
+        texDire.setColumns(10);
+        
+        JLabel lblTelefono = new JLabel("Telefono");
+        lblTelefono.setBounds(12, 311, 55, 16);
+        lblTelefono.setFont(new Font("Tahoma", Font.BOLD, 13));
+        
+        textTelefono = new JTextField();
+        textTelefono.setBounds(88, 305, 136, 27);
+        textTelefono.setColumns(10);
+        
+        JLabel lblRol = new JLabel("Rol");
+        lblRol.setBounds(614, 228, 18, 16);
+        
+        textRol = new JTextField();
+        textRol.setBounds(644, 225, 116, 27);
+        textRol.setColumns(10);
+        getContentPane().setLayout(null);
+        getContentPane().add(jLabel1);
+        getContentPane().add(lblNewLabel);
+        getContentPane().add(lblDireccin);
+        getContentPane().add(jLabel5);
+        getContentPane().add(jLabel6);
+        getContentPane().add(jLabel3);
+        getContentPane().add(jLabel4);
+        getContentPane().add(lblTelefono);
+        getContentPane().add(txtEdad);
+        getContentPane().add(lblRol);
+        getContentPane().add(textRol);
+        getContentPane().add(txtNombres);
+        getContentPane().add(txtCedula);
+        getContentPane().add(txtDireccion);
+        getContentPane().add(txtApellidos);
+        getContentPane().add(btnCancelar);
+        getContentPane().add(btnRegistrar);
+        getContentPane().add(texDire);
+        getContentPane().add(textTelefono);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyPressed
+    public void guardarPersona() {
+		// TODO Auto-generated method stub
+    	
+    	ControladorPersona cp = new ControladorPersona();
+    	Persona p = new Persona();
+    	p.setPer_cedula(txtCedula.getText());
+    	p.setPer_nombre(txtNombres.getText());
+    	p.setPer_apellido(txtApellidos.getText());
+    	p.setPer_edad(Integer.parseInt(txtEdad.getText()));
+    	p.setPer_direccion(txtDireccion.getText());
+    	p.setPer_telefono(textTelefono.getText());
+    	
+		cp.insertarPersona(p);
+	}
+
+	private void txtCedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyPressed
         if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
             txtNombres.requestFocus();
         }
@@ -348,55 +242,13 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_txtDireccionKeyReleased
 
-    private void txtFechaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFechaKeyPressed
-        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
-            txtTelefono.requestFocus();
-        }
-    }//GEN-LAST:event_txtFechaKeyPressed
-
-    private void txtTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyPressed
-        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
-            txtGenero.requestFocus();
-        }
-    }//GEN-LAST:event_txtTelefonoKeyPressed
-
-    private void txtGeneroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtGeneroKeyPressed
-        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
-            txtSangre.requestFocus();
-        }
-    }//GEN-LAST:event_txtGeneroKeyPressed
-
-    private void txtSangreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSangreKeyPressed
-        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
-            txtUsuario.requestFocus();
-        }
-    }//GEN-LAST:event_txtSangreKeyPressed
-
-    private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed
-        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
-            txtClave.requestFocus();
-        }
-    }//GEN-LAST:event_txtUsuarioKeyPressed
-
-    private void txtClaveKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClaveKeyPressed
-        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
-            txtClave2.requestFocus();
-        }
-    }//GEN-LAST:event_txtClaveKeyPressed
-
-    private void txtClave2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtClave2KeyPressed
-        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
-            btnRegistrar.requestFocus();
-        }
-    }//GEN-LAST:event_txtClave2KeyPressed
-
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void txtDireccionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionKeyPressed
         if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
-            txtFecha.requestFocus();
+           // txtFecha.requestFocus();
         }
     }//GEN-LAST:event_txtDireccionKeyPressed
 
@@ -405,27 +257,16 @@ public class PACIENTES extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField txtApellidos;
-    private javax.swing.JTextField txtCedula;
-    private javax.swing.JTextField txtClave;
-    private javax.swing.JTextField txtClave2;
-    private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtFecha;
-    private javax.swing.JTextField txtGenero;
-    private javax.swing.JTextField txtNombres;
-    private javax.swing.JTextField txtSangre;
-    private javax.swing.JTextField txtTelefono;
-    private javax.swing.JTextField txtUsuario;
-    // End of variables declaration//GEN-END:variables
+    private static javax.swing.JTextField txtApellidos;
+    private static javax.swing.JTextField txtCedula;
+    private static javax.swing.JTextField txtDireccion;
+    private static javax.swing.JTextField txtNombres;
+    private static JTextField txtEdad;
+    private static JTextField texDire;
+    private static JTextField textTelefono;
+    private static JTextField textRol;
 }
