@@ -12,6 +12,7 @@ public class Persona {
 	
 	
 	
+	
 	public int getPer_id() {
 		return per_id;
 	}

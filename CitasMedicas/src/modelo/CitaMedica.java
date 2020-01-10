@@ -4,11 +4,16 @@ import java.util.Date;
 
 public class CitaMedica {
 
-	
+	private int cm_id;
 	private Date cm_hora_inicio;
 	private int cm_duracion;
 	private Date cm_hora_fin;
-	
+	public int getCm_id() {
+		return cm_id;
+	}
+	public void setCm_id(int cm_id) {
+		this.cm_id = cm_id;
+	}
 	public Date getCm_hora_inicio() {
 		return cm_hora_inicio;
 	}
