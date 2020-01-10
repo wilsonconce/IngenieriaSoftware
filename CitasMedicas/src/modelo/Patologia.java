@@ -17,3 +17,4 @@ public class Patologia {
 		this.pat_nombre = pat_nombre;
 	}
 }
+//fgfhgh
