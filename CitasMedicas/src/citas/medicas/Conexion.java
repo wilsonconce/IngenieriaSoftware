@@ -21,7 +21,7 @@ public class Conexion {
      // Librería de MySQL
         public String driver = "com.mysql.cj.jdbc.Driver";
         // Nombre de la base de datos
-        public String database = "empleados";
+        public String database = "citasmedicas";
         // Host
         public String hostname = "localhost"; //localhost";
         // Puerto
@@ -31,7 +31,7 @@ public class Conexion {
         // Nombre de usuario
         public String username = "root";
         // Clave de usuario
-        public String password = "cuenca";
+        public String password = "";
         // Variable para la conexion con la base de datos
         static Connection conn = null;    
     

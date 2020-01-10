@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package citac.medicas.Vista;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
 * @author Wilson Conce
@@ -43,7 +45,15 @@ public class ReservarCita extends javax.swing.JInternalFrame {
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        	}
+        });
         jButton2 = new javax.swing.JButton();
+        jButton2.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        	}
+        });
         jLabel12 = new javax.swing.JLabel();
         jTextField11 = new javax.swing.JTextField();
 
