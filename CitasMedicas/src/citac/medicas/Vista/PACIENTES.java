@@ -64,6 +64,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         txtApellidos.setBounds(88, 142, 427, 27);
         btnRegistrar = new javax.swing.JButton();
         btnRegistrar.setBounds(636, 346, 115, 25);
+        
         btnRegistrar.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		
