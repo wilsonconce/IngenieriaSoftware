@@ -18,6 +18,8 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -173,11 +175,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         textTelefono.setColumns(10);
         
         JLabel lblRol = new JLabel("Rol");
-        lblRol.setBounds(614, 228, 18, 16);
-        
-        textRol = new JTextField();
-        textRol.setBounds(644, 225, 116, 27);
-        textRol.setColumns(10);
+        lblRol.setBounds(547, 228, 73, 16);
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
         getContentPane().add(lblNewLabel);
@@ -189,7 +187,6 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         getContentPane().add(lblTelefono);
         getContentPane().add(txtEdad);
         getContentPane().add(lblRol);
-        getContentPane().add(textRol);
         getContentPane().add(txtNombres);
         getContentPane().add(txtCedula);
         getContentPane().add(txtDireccion);
@@ -198,6 +195,13 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         getContentPane().add(btnRegistrar);
         getContentPane().add(texDire);
         getContentPane().add(textTelefono);
+        
+        mnTipos = new JMenu("Tipos");
+        mnTipos.setBounds(609, 220, 123, 24);
+        getContentPane().add(mnTipos);
+        
+        mntmHola = new JMenuItem("hola");
+        mnTipos.add(mntmHola);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -269,5 +273,6 @@ public class PACIENTES extends javax.swing.JInternalFrame {
     private static JTextField txtEdad;
     private static JTextField texDire;
     private static JTextField textTelefono;
-    private static JTextField textRol;
+    private JMenu mnTipos;
+    private JMenuItem mntmHola;
 }
