@@ -173,9 +173,6 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         textTelefono = new JTextField();
         textTelefono.setBounds(88, 305, 136, 27);
         textTelefono.setColumns(10);
-        
-        JLabel lblRol = new JLabel("Rol");
-        lblRol.setBounds(547, 228, 73, 16);
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
         getContentPane().add(lblNewLabel);
@@ -186,7 +183,6 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel4);
         getContentPane().add(lblTelefono);
         getContentPane().add(txtEdad);
-        getContentPane().add(lblRol);
         getContentPane().add(txtNombres);
         getContentPane().add(txtCedula);
         getContentPane().add(txtDireccion);
@@ -195,7 +191,9 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         getContentPane().add(btnRegistrar);
         getContentPane().add(texDire);
         getContentPane().add(textTelefono);
+      
         
+<<<<<<< HEAD
         mnTipos = new JMenu("Tipos");
         mnTipos.setBounds(609, 220, 123, 24);
         getContentPane().add(mnTipos);
@@ -207,6 +205,8 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         textField.setBounds(119, 372, 116, 22);
         getContentPane().add(textField);
         textField.setColumns(10);
+=======
+>>>>>>> 799f75f93d2e66eccc8c2d53e9fbf30eb80e3a56
 
         pack();
     }
@@ -278,7 +278,10 @@ public class PACIENTES extends javax.swing.JInternalFrame {
     private static JTextField txtEdad;
     private static JTextField texDire;
     private static JTextField textTelefono;
+<<<<<<< HEAD
     private JMenu mnTipos;
     private JMenuItem mntmHola;
     public JTextField textField;
+=======
+>>>>>>> 799f75f93d2e66eccc8c2d53e9fbf30eb80e3a56
 }
