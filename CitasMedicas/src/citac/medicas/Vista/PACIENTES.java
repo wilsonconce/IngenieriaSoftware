@@ -193,6 +193,20 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         getContentPane().add(textTelefono);
       
         
+<<<<<<< HEAD
+        mnTipos = new JMenu("Tipos");
+        mnTipos.setBounds(609, 220, 123, 24);
+        getContentPane().add(mnTipos);
+        
+        mntmHola = new JMenuItem("hola");
+        mnTipos.add(mntmHola);
+        
+        textField = new JTextField();
+        textField.setBounds(119, 372, 116, 22);
+        getContentPane().add(textField);
+        textField.setColumns(10);
+=======
+>>>>>>> 799f75f93d2e66eccc8c2d53e9fbf30eb80e3a56
 
         pack();
     }
@@ -264,4 +278,10 @@ public class PACIENTES extends javax.swing.JInternalFrame {
     private static JTextField txtEdad;
     private static JTextField texDire;
     private static JTextField textTelefono;
+<<<<<<< HEAD
+    private JMenu mnTipos;
+    private JMenuItem mntmHola;
+    public JTextField textField;
+=======
+>>>>>>> 799f75f93d2e66eccc8c2d53e9fbf30eb80e3a56
 }
