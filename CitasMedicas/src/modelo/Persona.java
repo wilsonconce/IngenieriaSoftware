@@ -11,8 +11,6 @@ public class Persona {
 	private String per_telefono;
 	
 	
-	
-	
 	public int getPer_id() {
 		return per_id;
 	}
