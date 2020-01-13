@@ -65,7 +65,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         txtApellidos = new javax.swing.JTextField();
         txtApellidos.setBounds(88, 142, 427, 27);
         btnRegistrar = new javax.swing.JButton();
-        btnRegistrar.setBounds(636, 346, 115, 25);
+        btnRegistrar.setBounds(117, 377, 115, 25);
         
         btnRegistrar.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
@@ -74,7 +74,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         	}
         });
         btnCancelar = new javax.swing.JButton();
-        btnCancelar.setBounds(436, 346, 93, 25);
+        btnCancelar.setBounds(12, 377, 93, 25);
 
         setClosable(true);
         setIconifiable(true);
