@@ -199,7 +199,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         getContentPane().add(textTelefono);
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     public void guardarPersona() {
 		// TODO Auto-generated method stub
