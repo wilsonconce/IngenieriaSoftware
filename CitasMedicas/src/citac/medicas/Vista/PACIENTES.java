@@ -202,6 +202,11 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         
         mntmHola = new JMenuItem("hola");
         mnTipos.add(mntmHola);
+        
+        textField = new JTextField();
+        textField.setBounds(119, 372, 116, 22);
+        getContentPane().add(textField);
+        textField.setColumns(10);
 
         pack();
     }
@@ -275,4 +280,5 @@ public class PACIENTES extends javax.swing.JInternalFrame {
     private static JTextField textTelefono;
     private JMenu mnTipos;
     private JMenuItem mntmHola;
+    public JTextField textField;
 }
