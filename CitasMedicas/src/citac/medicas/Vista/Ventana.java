@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
  * @author David Egas
  * @author Leandro Leon
  * @author Bryan Pintado
+ * 
  */
 public class Ventana extends javax.swing.JFrame {
 
@@ -167,7 +168,7 @@ public class Ventana extends javax.swing.JFrame {
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         PACIENTES p = new PACIENTES();
         jDesktopPane2.add(p);
-        p.show();
+        p.show();//jo
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed

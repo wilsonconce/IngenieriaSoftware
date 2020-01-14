@@ -45,7 +45,10 @@ public class Conexion {
 			System.out.println("Conexion terminada...");
 		}
 	}
-}
 
-//Bryan inutil
-//calla cachudo
+
+	public Object conexion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

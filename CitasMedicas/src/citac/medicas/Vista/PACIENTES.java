@@ -18,6 +18,8 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -45,7 +47,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel1.setBounds(0, 0, 772, 43);
+        jLabel1.setBounds(0, 0, 546, 43);
         jLabel3 = new javax.swing.JLabel();
         jLabel3.setBounds(12, 93, 71, 33);
         jLabel4 = new javax.swing.JLabel();
@@ -63,7 +65,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         txtApellidos = new javax.swing.JTextField();
         txtApellidos.setBounds(88, 142, 427, 27);
         btnRegistrar = new javax.swing.JButton();
-        btnRegistrar.setBounds(636, 346, 115, 25);
+        btnRegistrar.setBounds(288, 342, 115, 25);
         
         btnRegistrar.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
@@ -72,7 +74,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         	}
         });
         btnCancelar = new javax.swing.JButton();
-        btnCancelar.setBounds(436, 346, 93, 25);
+        btnCancelar.setBounds(12, 377, 93, 25);
 
         setClosable(true);
         setIconifiable(true);
@@ -171,13 +173,6 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         textTelefono = new JTextField();
         textTelefono.setBounds(88, 305, 136, 27);
         textTelefono.setColumns(10);
-        
-        JLabel lblRol = new JLabel("Rol");
-        lblRol.setBounds(614, 228, 18, 16);
-        
-        textRol = new JTextField();
-        textRol.setBounds(644, 225, 116, 27);
-        textRol.setColumns(10);
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
         getContentPane().add(lblNewLabel);
@@ -188,8 +183,6 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel4);
         getContentPane().add(lblTelefono);
         getContentPane().add(txtEdad);
-        getContentPane().add(lblRol);
-        getContentPane().add(textRol);
         getContentPane().add(txtNombres);
         getContentPane().add(txtCedula);
         getContentPane().add(txtDireccion);
@@ -198,9 +191,39 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         getContentPane().add(btnRegistrar);
         getContentPane().add(texDire);
         getContentPane().add(textTelefono);
+        
+
+
+        mnTipos = new JMenu("Tipos");
+        mnTipos.setBounds(609, 220, 123, 24);
+        getContentPane().add(mnTipos);
+
+        JLabel lblTipo = new JLabel("Tipo");
+        lblTipo.setBounds(246, 311, 56, 16);
+        getContentPane().add(lblTipo);
+        
+        textTipo = new JTextField();
+        textTipo.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		
+        		Tipos t = new Tipos();
+        		t.setVisible(true);
+        	}
+        });
+        textTipo.setBounds(297, 308, 218, 22);
+        getContentPane().add(textTipo);
+        textTipo.setColumns(10);
+      
+        
+
+        textField = new JTextField();
+        textField.setBounds(119, 372, 116, 22);
+        getContentPane().add(textField);
+        textField.setColumns(10);
+
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     public void guardarPersona() {
 		// TODO Auto-generated method stub
@@ -268,6 +291,11 @@ public class PACIENTES extends javax.swing.JInternalFrame {
     private static javax.swing.JTextField txtNombres;
     private static JTextField txtEdad;
     private static JTextField texDire;
+
     private static JTextField textTelefono;
-    private static JTextField textRol;
+
+    private JMenu mnTipos;
+    private JMenuItem mntmHola;
+    public JTextField textField;
+    public static  JTextField textTipo;
 }
