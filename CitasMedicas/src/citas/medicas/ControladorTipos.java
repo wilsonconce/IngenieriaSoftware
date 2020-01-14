@@ -30,7 +30,9 @@ public class ControladorTipos {
 				ModeloTipo  mo = new ModeloTipo();
 
 				mo.setTipId(ps.getInt("tipo_id"));
-				mo.setTipNombre(ps.getString("tipo_nombre"));
+				System.out.println("envia" + ps.getInt("tipo_id"));
+				mo.setTipNombre(ps.getString("tipo_descripcion"));
+				System.out.println("envia" + ps.getString("tipo_descripcion"));
 				listaDeTipos.add(mo);
 
 			}

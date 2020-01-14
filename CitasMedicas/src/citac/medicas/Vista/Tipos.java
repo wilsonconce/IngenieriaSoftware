@@ -2,6 +2,8 @@ package citac.medicas.Vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,10 +12,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import citas.medicas.ControladorTipos;
+import modelo.ModeloTipo;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 public class Tipos extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
+	public static JTable table;
+	
 
 	/**
 	 * Launch the application.
@@ -24,6 +32,7 @@ public class Tipos extends JFrame {
 				try {
 					Tipos frame = new Tipos();
 					frame.setVisible(true);
+			
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -47,6 +56,13 @@ public class Tipos extends JFrame {
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				seleccionarTipo();
+				dispose();
+			}
+		});
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
@@ -55,5 +71,41 @@ public class Tipos extends JFrame {
 			}
 		));
 		scrollPane.setViewportView(table);
+		listaTipos();
+	
+	}
+	
+	
+	
+	public static void listaTipos() {
+
+		List<ModeloTipo> recibir;
+		
+		ControladorTipos ob = new ControladorTipos();
+		recibir = ob.listarTipos();
+		
+		
+		
+
+		for (int i = 0; i < recibir.size(); i++) {
+
+			DefaultTableModel modelo = (DefaultTableModel) table.getModel();
+			Object[] fila = new Object[6];
+
+			fila[0] = recibir.get(i).getTipId();
+			fila[1] = recibir.get(i).getTipNombre();
+
+			modelo.addRow(fila);
+			table.setModel(modelo);
+
+		}
+	}
+	public  void seleccionarTipo(){
+		 int seleccion = table.getSelectedRow();
+		String tipoNombre = table.getValueAt(seleccion, 1)+"";
+		System.out.println("DAVID " + tipoNombre);
+	
+		 PACIENTES.textTipo.setText(tipoNombre);
+	
 	}
 }

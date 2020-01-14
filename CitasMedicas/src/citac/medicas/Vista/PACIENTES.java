@@ -47,7 +47,7 @@ public class PACIENTES extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel1.setBounds(0, 0, 772, 43);
+        jLabel1.setBounds(0, 0, 546, 43);
         jLabel3 = new javax.swing.JLabel();
         jLabel3.setBounds(12, 93, 71, 33);
         jLabel4 = new javax.swing.JLabel();
@@ -191,16 +191,31 @@ public class PACIENTES extends javax.swing.JInternalFrame {
         getContentPane().add(btnRegistrar);
         getContentPane().add(texDire);
         getContentPane().add(textTelefono);
-      
         
+
 
         mnTipos = new JMenu("Tipos");
         mnTipos.setBounds(609, 220, 123, 24);
         getContentPane().add(mnTipos);
+
+        JLabel lblTipo = new JLabel("Tipo");
+        lblTipo.setBounds(246, 311, 56, 16);
+        getContentPane().add(lblTipo);
         
-        mntmHola = new JMenuItem("hola");
-        mnTipos.add(mntmHola);
+        textTipo = new JTextField();
+        textTipo.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		
+        		Tipos t = new Tipos();
+        		t.setVisible(true);
+        	}
+        });
+        textTipo.setBounds(297, 308, 218, 22);
+        getContentPane().add(textTipo);
+        textTipo.setColumns(10);
+      
         
+
         textField = new JTextField();
         textField.setBounds(119, 372, 116, 22);
         getContentPane().add(textField);
@@ -276,9 +291,11 @@ public class PACIENTES extends javax.swing.JInternalFrame {
     private static javax.swing.JTextField txtNombres;
     private static JTextField txtEdad;
     private static JTextField texDire;
+
     private static JTextField textTelefono;
 
     private JMenu mnTipos;
     private JMenuItem mntmHola;
     public JTextField textField;
+    public static  JTextField textTipo;
 }

@@ -45,4 +45,10 @@ public class Conexion {
 			System.out.println("Conexion terminada...");
 		}
 	}
+
+
+	public Object conexion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
