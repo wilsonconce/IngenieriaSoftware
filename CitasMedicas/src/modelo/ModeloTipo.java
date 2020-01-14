@@ -4,6 +4,7 @@ public class ModeloTipo {
 	
 	private int tipId;
 	private String tipNombre;
+	
 	public int getTipId() {
 		return tipId;
 	}

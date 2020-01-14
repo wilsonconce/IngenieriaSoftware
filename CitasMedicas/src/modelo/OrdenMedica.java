@@ -8,6 +8,7 @@ public class OrdenMedica {
 	private String om_diagnostico;
 	private Date om_fecha_inicio;
 	private Date om_fecha_fin;
+	
 	public int getOm_id() {
 		return om_id;
 	}

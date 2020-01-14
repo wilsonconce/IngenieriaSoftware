@@ -4,6 +4,7 @@ public class Patologia {
 
 	private int pat_id;
 	private String pat_nombre;
+	
 	public int getPat_id() {
 		return pat_id;
 	}

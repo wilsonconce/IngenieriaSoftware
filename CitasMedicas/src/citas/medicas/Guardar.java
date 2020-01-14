@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
  * @author Bryan Pintado
  */
 public class Guardar {
+	
     Conexion cnx = new Conexion();
     
     Statement s;
