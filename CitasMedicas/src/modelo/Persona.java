@@ -54,6 +54,13 @@ public class Persona {
 		this.per_telefono = per_telefono;
 	}
 	
+	@Override
+	public String toString() {
+		return "Persona [per_id=" + per_id + ", per_cedula=" + per_cedula + ", per_nombre=" + per_nombre
+				+ ", per_apellido=" + per_apellido + ", per_edad=" + per_edad + ", per_direccion=" + per_direccion
+				+ ", per_telefono=" + per_telefono + "]";
+	}
+	
 	
 
 }
