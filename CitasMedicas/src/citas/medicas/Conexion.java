@@ -10,7 +10,7 @@ public class Conexion {
 	private static final String driver = "com.mysql.jdbc.Driver";
 	private static final String user = "root";
 	private static final String password = "";
-	private static final String url = "jdbc:mysql://localhost/citasmedicas";
+	private static final String url = "jdbc:mysql://localhost:3306/citasmedicas";
 	// private static final String server2 =
 	// "jdbc:mysql://192.168.1.2:3306/computacion?serverTimezone=UTC";
 	// private static final String server =
