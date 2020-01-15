@@ -6,11 +6,14 @@
 package citac.medicas.Vista;
 
 import java.awt.event.KeyEvent;
+import java.sql.SQLException;
+
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import citas.medicas.ControladorPersona;
+import ec.edu.ups.conexion.Conexion;
 import modelo.Persona;
 
 import javax.swing.JLabel;
@@ -71,7 +74,15 @@ public class PACIENTES extends javax.swing.JInternalFrame {
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				guardarPersona();
+				//guardarPersona();
+				try {
+					Conexion cnx = new Conexion();
+					cnx.conexion();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 		btnCancelar = new javax.swing.JButton();
