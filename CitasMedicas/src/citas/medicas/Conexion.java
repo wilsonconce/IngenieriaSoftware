@@ -1,4 +1,6 @@
-package ec.edu.ups.conexion;
+package citas.medicas;
+
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,19 +8,37 @@ import java.sql.SQLException;
 
 public class Conexion {
 
+<<<<<<< HEAD
+	public static Connection conn;
+	private static final String driver = "com.mysql.jdbc.Driver";
+	private static final String user = "root";
+	private static final String password = "";
+	private static final String url = "jdbc:mysql://localhost:3306/citasmedicas";
+	// private static final String server2 =
+	// "jdbc:mysql://192.168.1.2:3306/computacion?serverTimezone=UTC";
+	// private static final String server =
+	// "jdbc:mysql://192.168.2.2:3306/computacion?serverTimezone=UTC";
+
+	public Conexion() throws SQLException {
+		conn = null;
+
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url, user, password);
+			if (conn != null) {
+				System.out.println("Conexion establecida..");
+			}
+=======
 		public static Connection conn;
 		private static final String driver = "com.mysql.jdbc.Driver";
 		private static final String user = "root";
-<<<<<<< HEAD
-		private static final String password ="";
-=======
 		private static final String password = "";
->>>>>>> 6d349f3b598e51d50216e506b699b1148fbcdab3
 		private static final String url = "jdbc:mysql://localhost:3306/citasmedicas";
 
 
 		public Conexion() throws SQLException {
 			conn = null;
+>>>>>>> 6d349f3b598e51d50216e506b699b1148fbcdab3
 
 			try {
 				Class.forName(driver);

@@ -76,10 +76,16 @@ public class PACIENTES extends javax.swing.JInternalFrame {
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Persona persona = new Persona();
+<<<<<<< HEAD
+				
+				guardarPersona();
+		
+=======
 				ControladorPaciente ctl_Paciente = new ControladorPaciente(persona);
 				guardarPersona();
 		
 					//ctl_Paciente.agregar();
+>>>>>>> 6d349f3b598e51d50216e506b699b1148fbcdab3
 					
 				
 				
