@@ -8,8 +8,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class ControladorCitaMedica {
-	
-	
+
 	public class Guardar {
 	    Conexion cnx = new Conexion();
 	    

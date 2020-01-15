@@ -11,43 +11,42 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
+
 /**
  *
-* @author Wilson Conce
+ * @author Wilson Conce
  * @author David Egas
  * @author Leandro Leon
  * @author Bryan Pintado
  */
 public class Buscar {
-    Conexion cnx = new Conexion();
-    Statement s;
-    ResultSet rs = null;
-    
-    public Boolean busqueda_loguin(String usuario, String pass){
-        Boolean resultado = false;
-        int cont = 0;
-        
-        try {
-            s = cnx.conexion().createStatement();
+	Conexion cnx = new Conexion();
+	Statement s;
+	ResultSet rs = null;
 
-            String sql = "SELECT EMPL_USUARIO, EMPL_PASS FROM TBL_EMPLEADOS "
-                    + "WHERE EMPL_USUARIO = ? AND EMPL_PASS = ?;";
+	public Boolean busqueda_loguin(String usuario, String pass) {
+		Boolean resultado = false;
+		int cont = 0;
 
+		try {
+			s = cnx.conexion().createStatement();
 
-            PreparedStatement consulta = cnx.conexion().prepareStatement(sql);
-            consulta.setString(1, usuario);
-            consulta.setString(2, pass);
+			String sql = "SELECT EMPL_USUARIO, EMPL_PASS FROM TBL_EMPLEADOS "
+					+ "WHERE EMPL_USUARIO = ? AND EMPL_PASS = ?;";
 
-            rs = consulta.executeQuery();
-            while (rs.next()) {
-                resultado = true;
-            }
+			PreparedStatement consulta = cnx.conexion().prepareStatement(sql);
+			consulta.setString(1, usuario);
+			consulta.setString(2, pass);
 
-        } 
-        catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "ERROR: " + ex.getMessage());
-        }
-        
-        return resultado;
-    }
+			rs = consulta.executeQuery();
+			while (rs.next()) {
+				resultado = true;
+			}
+
+		} catch (SQLException ex) {
+			JOptionPane.showMessageDialog(null, "ERROR: " + ex.getMessage());
+		}
+
+		return resultado;
+	}
 }

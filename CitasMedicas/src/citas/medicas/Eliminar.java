@@ -13,18 +13,18 @@ import javax.swing.JOptionPane;
 
 /**
  *
-* @author Wilson Conce
+ * @author Wilson Conce
  * @author David Egas
  * @author Leandro Leon
  * @author Bryan Pintado
  */
 public class Eliminar {
-    Conexion cnx = new Conexion();
-    Statement s;
-    ResultSet rs = null;
+	Conexion cnx = new Conexion();
+	Statement s;
+	ResultSet rs = null;
 
-    public Boolean eliminar_empleado_id() {
-        Boolean resultado = false;
+	public Boolean eliminar_empleado_id() {
+		Boolean resultado = false;
 //        String eliEmpleado = "DELETE FROM TBL_EMPLEADOS WHERE PERS_ID = ?";
 //        String elipersona = "DELETE FROM TBL_PERSONA WHERE PERS_ID = ?";
 //
@@ -45,6 +45,6 @@ public class Eliminar {
 //            JOptionPane.showMessageDialog(null, ex.getMessage());
 //        }
 
-        return resultado;
-    }
+		return resultado;
+	}
 }

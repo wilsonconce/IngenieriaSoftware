@@ -13,18 +13,18 @@ import javax.swing.JOptionPane;
 
 /**
  *
-* @author Wilson Conce
+ * @author Wilson Conce
  * @author David Egas
  * @author Leandro Leon
  * @author Bryan Pintado
  */
 public class Modificar {
-    Conexion cnx = new Conexion();
-    Statement s;
-    ResultSet rs = null;
+	Conexion cnx = new Conexion();
+	Statement s;
+	ResultSet rs = null;
 
-    public Boolean actualizar_empleado() {
-        Boolean resultado = false;
+	public Boolean actualizar_empleado() {
+		Boolean resultado = false;
 
 //        String actualizar_emp_persona = "UPDATE TBL_PERSONA SET "
 //                + "PERS_NOMBRES = ?, "
@@ -79,6 +79,6 @@ public class Modificar {
 //            JOptionPane.showMessageDialog(null, ex.getMessage());
 //        }
 
-        return resultado;
-    }
+		return resultado;
+	}
 }

@@ -10,13 +10,11 @@ import modelo.ModeloTipo;
 
 public class ControladorTipos {
 
-	
-	
 	public List<ModeloTipo> listarTipos() {
 
 		Conexion con = null;
 		List<ModeloTipo> listaDeTipos = new ArrayList<>();
-	
+
 		String sql = "select * from tipos";
 
 		try {
@@ -24,10 +22,10 @@ public class ControladorTipos {
 			Connection reg = con.getConnection();
 			PreparedStatement rs = (PreparedStatement) reg.prepareStatement(sql);
 			ResultSet ps = rs.executeQuery();
-			
+
 			while (ps.next()) {
-			
-				ModeloTipo  mo = new ModeloTipo();
+
+				ModeloTipo mo = new ModeloTipo();
 
 				mo.setTipId(ps.getInt("tipo_id"));
 				System.out.println("envia" + ps.getInt("tipo_id"));
