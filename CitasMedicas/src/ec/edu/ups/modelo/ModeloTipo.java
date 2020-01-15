@@ -1,4 +1,4 @@
-package modelo;
+package ec.edu.ups.modelo;
 
 public class ModeloTipo {
 

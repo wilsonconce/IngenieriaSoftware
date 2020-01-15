@@ -1,4 +1,4 @@
-package citac.medicas.Vista;
+package ec.edu.ups.vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,8 +12,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import citas.medicas.ControladorTipos;
-import modelo.ModeloTipo;
+import ec.edu.ups.controlador.ControladorTipos;
+import ec.edu.ups.modelo.ModeloTipo;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 

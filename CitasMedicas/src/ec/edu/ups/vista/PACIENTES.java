@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citac.medicas.Vista;
+package ec.edu.ups.vista;
 
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
@@ -12,10 +12,11 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-import citas.medicas.ControladorPersona;
+
 import ec.edu.ups.conexion.Conexion;
 import ec.edu.ups.controlador.ControladorPaciente;
-import modelo.Persona;
+import ec.edu.ups.controlador.ControladorPersona;
+import ec.edu.ups.modelo.Persona;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;

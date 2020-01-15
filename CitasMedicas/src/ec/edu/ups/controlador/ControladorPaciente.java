@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import ec.edu.ups.conexion.Conexion;
-import modelo.Persona;
+import ec.edu.ups.modelo.Persona;
 
 public class ControladorPaciente {
 
