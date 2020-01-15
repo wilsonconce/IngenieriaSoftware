@@ -7,10 +7,14 @@ import java.sql.Statement;
 
 import javax.swing.JOptionPane;
 
-public class ControladorCitaMedica {
+import ec.edu.ups.conexion.Conexion;
 
+public class ControladorCitaMedica {
+	
+	Conexion cnx;
+	
 	public class Guardar {
-	    Conexion cnx = new Conexion();
+	    
 	    
 	    Statement s;
 	    ResultSet rs = null;
@@ -67,5 +71,6 @@ public class ControladorCitaMedica {
 
 	        return resultado;
 	    }
+	}
 
 }

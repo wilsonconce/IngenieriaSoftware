@@ -14,6 +14,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import citas.medicas.ControladorPersona;
 import ec.edu.ups.conexion.Conexion;
+import ec.edu.ups.controlador.ControladorPaciente;
 import modelo.Persona;
 
 import javax.swing.JLabel;
@@ -73,15 +74,13 @@ public class PACIENTES extends javax.swing.JInternalFrame {
 
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				Persona persona = new Persona();
+				ControladorPaciente ctl_Paciente = new ControladorPaciente(persona);
 				//guardarPersona();
-				try {
-					Conexion cnx = new Conexion();
-					cnx.conexion();
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+		
+					ctl_Paciente.agregar();
+					
+				
 				
 			}
 		});
