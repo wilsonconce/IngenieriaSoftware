@@ -11,8 +11,18 @@ public class Conexion {
 		private static final String user = "root";
 
 		private static final String password ="";
+<<<<<<< HEAD
 
+=======
+=======
+		private static final String password = "";
+<<<<<<< HEAD
+		private static final String url = "jdbc:mysql://localhost:3310/citasmedicas";
+=======
+>>>>>>> 6d349f3b598e51d50216e506b699b1148fbcdab3
+>>>>>>> c1c0c6955318760d84dc0a4b409a21502fdcc154
 		private static final String url = "jdbc:mysql://localhost:3306/citasmedicas";
+>>>>>>> dc37fa4a740a07681ded939c130069510990b409
 
 
 		public Conexion() throws SQLException {
