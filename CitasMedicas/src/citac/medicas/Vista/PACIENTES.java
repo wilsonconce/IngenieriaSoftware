@@ -76,9 +76,9 @@ public class PACIENTES extends javax.swing.JInternalFrame {
 			public void actionPerformed(ActionEvent e) {
 				Persona persona = new Persona();
 				ControladorPaciente ctl_Paciente = new ControladorPaciente(persona);
-				//guardarPersona();
+				guardarPersona();
 		
-					ctl_Paciente.agregar();
+					//ctl_Paciente.agregar();
 					
 				
 				

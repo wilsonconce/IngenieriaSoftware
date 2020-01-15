@@ -1,5 +1,7 @@
 package citas.medicas;
 
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +15,7 @@ import modelo.Persona;
 public class ControladorPersona {
 
 	public void insertarPersona(Persona persona) {
-		// Conexion cnx = new Conexion();
+	//	 Conexion cnx = new Conexion();
 		Conexion con = null;
 
 //		  String INSERT_TBL_PERSONA = "INSERT INTO PERSONA"
