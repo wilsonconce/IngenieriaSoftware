@@ -1,6 +1,4 @@
-package citas.medicas;
-
-
+package ec.edu.ups.conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

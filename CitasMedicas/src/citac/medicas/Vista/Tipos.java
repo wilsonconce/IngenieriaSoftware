@@ -21,7 +21,6 @@ public class Tipos extends JFrame {
 
 	private JPanel contentPane;
 	public static JTable table;
-	
 
 	/**
 	 * Launch the application.
@@ -32,7 +31,7 @@ public class Tipos extends JFrame {
 				try {
 					Tipos frame = new Tipos();
 					frame.setVisible(true);
-			
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -50,11 +49,11 @@ public class Tipos extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(12, 13, 362, 176);
 		contentPane.add(scrollPane);
-		
+
 		table = new JTable();
 		table.addMouseListener(new MouseAdapter() {
 			@Override
@@ -63,29 +62,18 @@ public class Tipos extends JFrame {
 				dispose();
 			}
 		});
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"C\u00F3digo", "Nombre"
-			}
-		));
+		table.setModel(new DefaultTableModel(new Object[][] {}, new String[] { "C\u00F3digo", "Nombre" }));
 		scrollPane.setViewportView(table);
 		listaTipos();
-	
+
 	}
-	
-	
-	
+
 	public static void listaTipos() {
 
 		List<ModeloTipo> recibir;
-		
+
 		ControladorTipos ob = new ControladorTipos();
 		recibir = ob.listarTipos();
-		
-		
-		
 
 		for (int i = 0; i < recibir.size(); i++) {
 
@@ -100,12 +88,13 @@ public class Tipos extends JFrame {
 
 		}
 	}
-	public  void seleccionarTipo(){
-		 int seleccion = table.getSelectedRow();
-		String tipoNombre = table.getValueAt(seleccion, 1)+"";
+
+	public void seleccionarTipo() {
+		int seleccion = table.getSelectedRow();
+		String tipoNombre = table.getValueAt(seleccion, 1) + "";
 		System.out.println("DAVID " + tipoNombre);
-	
-		 PACIENTES.textTipo.setText(tipoNombre);
-	
+
+		PACIENTES.textTipo.setText(tipoNombre);
+
 	}
 }
