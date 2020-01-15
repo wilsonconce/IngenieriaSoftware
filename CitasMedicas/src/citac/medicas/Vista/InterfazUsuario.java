@@ -42,8 +42,7 @@ public class InterfazUsuario extends javax.swing.JFrame {
         SimpleDateFormat format=new SimpleDateFormat(pmAm);
         Calendar hoy=Calendar.getInstance();
         jTextField1.setText(String.format(format.format(sistHora),hoy));
-        
-        }
+       }
         
     }
 
