@@ -20,11 +20,39 @@ import javax.swing.Timer;
  */
 public class InterfazUsuario extends javax.swing.JFrame {
 
+<<<<<<< HEAD
+    /**
+     * Creates new form InterfazUsuario
+     */
+    public InterfazUsuario() {
+        initComponents();
+        
+        Date sisFecha=new Date();
+        SimpleDateFormat formato=new SimpleDateFormat("");
+                
+                
+     Timer tiempo=new Timer(100, new InterfazUsuario.hora());
+     tiempo.start();
+    }
+    
+    class hora implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        Date sistHora=new Date();
+        String pmAm ="hh:mm:ss a";
+        SimpleDateFormat format=new SimpleDateFormat(pmAm);
+        Calendar hoy=Calendar.getInstance();
+        jTextField1.setText(String.format(format.format(sistHora),hoy));
+       }
+        
+    }
+=======
 	/**
 	 * Creates new form InterfazUsuario
 	 */
 	public InterfazUsuario() {
 		initComponents();
+>>>>>>> 042368270dda62ca3cef0d968b94df45cb91caa3
 
 		Date sisFecha = new Date();
 		SimpleDateFormat formato = new SimpleDateFormat("");
