@@ -1,4 +1,4 @@
-package citas.medicas;
+package ec.edu.ups.controlador;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,8 @@ import java.sql.Statement;
 
 import javax.swing.JOptionPane;
 
-import modelo.Persona;
+import ec.edu.ups.conexion.Conexion;
+import ec.edu.ups.modelo.Persona;
 
 public class ControladorPersona {
 

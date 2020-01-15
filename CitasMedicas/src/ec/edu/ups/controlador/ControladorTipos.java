@@ -1,4 +1,4 @@
-package citas.medicas;
+package ec.edu.ups.controlador;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.ModeloTipo;
+import ec.edu.ups.conexion.Conexion;
+import ec.edu.ups.modelo.ModeloTipo;
 
 public class ControladorTipos {
 

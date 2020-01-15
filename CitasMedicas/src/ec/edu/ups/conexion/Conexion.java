@@ -9,8 +9,16 @@ public class Conexion {
 		public static Connection conn;
 		private static final String driver = "com.mysql.jdbc.Driver";
 		private static final String user = "root";
+<<<<<<< HEAD
+		private static final String password ="";
+=======
 		private static final String password = "";
+<<<<<<< HEAD
 		private static final String url = "jdbc:mysql://localhost:3310/citasmedicas";
+=======
+>>>>>>> 6d349f3b598e51d50216e506b699b1148fbcdab3
+		private static final String url = "jdbc:mysql://localhost:3306/citasmedicas";
+>>>>>>> dc37fa4a740a07681ded939c130069510990b409
 
 
 		public Conexion() throws SQLException {
