@@ -132,7 +132,10 @@ public class ControladorPersona {
 
 	}
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f88877956603242683642401d3d87670124c4f9
 
 	public List<Persona> buscarPersona(Persona persona) {
 
@@ -151,12 +154,10 @@ public class ControladorPersona {
 			ResultSet ps = rs.executeQuery();
 			while (ps.next()) {
 				Persona mo = new Persona();
-
-			
-				mo.setPer_cedula(ps.getString("per_cedula"));
-				mo.setPer_nombre(ps.getString("per_nombre"));
-				mo.setPer_apellido(ps.getString("per_apellido"));
-				mo.setPer_edad(ps.getInt("per_edad"));
+				System.out.println(ps.getString(2)+ps.getInt(4));
+				mo.setPer_nombre(ps.getString(2));
+				mo.setPer_apellido(ps.getString(3));
+				mo.setPer_edad(ps.getInt(4));
 				
 				listar.add(mo);
 
@@ -169,7 +170,13 @@ public class ControladorPersona {
 
 		return listar;
 
+<<<<<<< HEAD
 	}
+=======
+		}
+
+	
+>>>>>>> 4f88877956603242683642401d3d87670124c4f9
 	public void insertarPaciente(Paciente paciente) {
 
 		Conexion con = null;
@@ -191,12 +198,24 @@ public class ControladorPersona {
 			insert_persona.execute();
 
 		} catch (Exception e) {
+<<<<<<< HEAD
+=======
+
+			e.printStackTrace();
+>>>>>>> 4f88877956603242683642401d3d87670124c4f9
 		} finally {
 			con.desconectar();
 		}
 
+<<<<<<< HEAD
 	}
 	}
 	
 	
 
+=======
+		}
+	
+	
+}
+>>>>>>> 4f88877956603242683642401d3d87670124c4f9
