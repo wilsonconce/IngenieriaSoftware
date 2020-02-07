@@ -104,6 +104,11 @@ public class Loguearse extends JFrame {
 		contentPane.add(btnIniciar);
 
 		btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
 		btnSalir.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnSalir.setBounds(56, 196, 97, 25);
 		contentPane.add(btnSalir);

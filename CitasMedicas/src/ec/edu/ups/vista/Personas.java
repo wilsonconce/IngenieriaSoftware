@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import ec.edu.ups.controlador.ControladorPersona;
+import ec.edu.ups.modelo.Paciente;
 import ec.edu.ups.modelo.Persona;
 
 import javax.swing.JTextField;
@@ -40,12 +41,13 @@ public class Personas extends JFrame {
 	private JLabel lblEdad;
 	private JLabel lblTelefono;
 	private JLabel label;
-	private JButton btnModificar;
-	private JButton btnEliminar;
+	public static JButton btnModificar;
+	public static JButton btnEliminar;
 	private JScrollPane scrollPane;
 	public static JTable table;
 	private JScrollPane scrollPane_1;
 	public static ArrayList<Persona> recibir;
+	public static JButton btnAgregar;
 
 	/**
 	 * Launch the application.
@@ -91,6 +93,43 @@ public class Personas extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JButton btnOk = new JButton("OK");
+		btnOk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				agregarPaciente();
+				limpiarCampos();
+				listarPers();
+				JOptionPane.showMessageDialog(null, "Gracias");
+			
+			}
+		});
+		btnOk.setBounds(491, 36, 97, 25);
+		contentPane.add(btnOk);
+		
+		JButton btnAgregarPaciente = new JButton("Agregar Paciente");
+		btnAgregarPaciente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				lblCdula.setText("Id Paciente");
+				lblNombre.setText("Id Pac Persona");
+				lblApellidos.setText("Pac Fecha Registro");
+				
+				txtEdad.setEnabled(false);
+				txtDireccion.setEnabled(false);
+				txtTelefono.setEnabled(false);
+			
+				btnAgregar.setEnabled(false);
+				btnEliminar.setEnabled(false);
+				btnModificar.setEnabled(false);
+		
+				
+				
+			}
+		});
+		btnAgregarPaciente.setBounds(343, 36, 136, 25);
+		contentPane.add(btnAgregarPaciente);
 
 		scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(12, 384, 638, 189);
@@ -150,7 +189,7 @@ public class Personas extends JFrame {
 		btnModificar.setBounds(22, 586, 97, 25);
 		contentPane.add(btnModificar);
 
-		JButton btnAgregar = new JButton("Agregar");
+		btnAgregar = new JButton("Agregar");
 		btnAgregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Persona persona = new Persona();
@@ -160,45 +199,45 @@ public class Personas extends JFrame {
 				JOptionPane.showMessageDialog(null, "Gracias");
 			}
 		});
-		btnAgregar.setBounds(258, 300, 97, 25);
+		btnAgregar.setBounds(288, 300, 97, 25);
 		contentPane.add(btnAgregar);
 
 		txtEdad = new JTextField();
 		txtEdad.setColumns(10);
-		txtEdad.setBounds(80, 247, 166, 27);
+		txtEdad.setBounds(111, 247, 166, 27);
 		contentPane.add(txtEdad);
 
 		txtNombre = new JTextField();
-		txtNombre.setBounds(80, 88, 508, 27);
+		txtNombre.setBounds(111, 88, 508, 27);
 		contentPane.add(txtNombre);
 
 		txtCedula = new JTextField();
-		txtCedula.setBounds(80, 35, 166, 27);
+		txtCedula.setBounds(111, 35, 166, 27);
 		contentPane.add(txtCedula);
 
 		txtDireccion = new JTextField();
-		txtDireccion.setBounds(80, 194, 508, 27);
+		txtDireccion.setBounds(111, 191, 508, 27);
 		contentPane.add(txtDireccion);
 
 		txtApellido = new JTextField();
-		txtApellido.setBounds(80, 138, 508, 27);
+		txtApellido.setBounds(111, 138, 508, 27);
 		contentPane.add(txtApellido);
 
 		txtTelefono = new JTextField();
 		txtTelefono.setColumns(10);
-		txtTelefono.setBounds(80, 299, 166, 27);
+		txtTelefono.setBounds(111, 299, 166, 27);
 		contentPane.add(txtTelefono);
 
 		lblCdula = new JLabel("C\u00E9dula:");
-		lblCdula.setBounds(12, 40, 56, 16);
+		lblCdula.setBounds(12, 40, 123, 16);
 		contentPane.add(lblCdula);
 
 		lblNombre = new JLabel("Nombres:");
-		lblNombre.setBounds(12, 93, 56, 16);
+		lblNombre.setBounds(12, 93, 123, 16);
 		contentPane.add(lblNombre);
 
 		lblApellidos = new JLabel("Apellidos:");
-		lblApellidos.setBounds(12, 143, 56, 16);
+		lblApellidos.setBounds(12, 143, 123, 16);
 		contentPane.add(lblApellidos);
 
 		lblDireccion = new JLabel("Direcci\u00F3n:");
@@ -218,6 +257,19 @@ public class Personas extends JFrame {
 		label.setBounds(0, 0, 664, 635);
 		contentPane.add(label);
 		listarPers();
+	}
+
+	protected void agregarPaciente() {
+		
+		ControladorPersona cp = new ControladorPersona();
+		Paciente p = new Paciente();
+	
+		p.setPac_per_id(Integer.parseInt(txtNombre.getText()));
+		p.setPac_fecha_registro(txtApellido.getText());
+		
+
+		cp.insertarPaciente(p);
+		
 	}
 
 	protected void seleccionarFila() {
@@ -326,5 +378,4 @@ public class Personas extends JFrame {
 		txtTelefono.setText("");
 		table.setEnabled(true);
 	}
-
 }
