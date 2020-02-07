@@ -11,6 +11,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import ec.edu.ups.conexion.Conexion;
+import ec.edu.ups.modelo.Paciente;
 import ec.edu.ups.modelo.Persona;
 
 public class ControladorPersona {
@@ -131,6 +132,7 @@ public class ControladorPersona {
 
 	}
 	
+<<<<<<< HEAD
 
 	public List<Persona> buscarPersona(Persona persona) {
 
@@ -161,11 +163,43 @@ public class ControladorPersona {
 			}
 
 		} catch (Exception e) {
+=======
+	
+	public void insertarPaciente(Paciente paciente) {
+
+		Conexion con = null;
+
+		String INSERT_TBL_PERSONA = "INSERT INTO paciente ( pac_per_id, pac_fecha_registro)"
+				+ "VALUES (?,?);";
+
+		try {
+
+			con = new Conexion();
+			Connection reg = con.getConnection();
+
+			PreparedStatement insert_persona = (PreparedStatement) reg.prepareStatement(INSERT_TBL_PERSONA);
+
+		
+			insert_persona.setInt(1, paciente.getPac_per_id());
+			insert_persona.setString(2, paciente.getPac_fecha_registro());
+			
+			insert_persona.execute();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+>>>>>>> a7fd9acda05adb6ed57215c6de42782281d1f830
 		} finally {
 			con.desconectar();
 		}
 
+<<<<<<< HEAD
 		return listar;
 
 	}
+=======
+	}
+	
+	
+>>>>>>> a7fd9acda05adb6ed57215c6de42782281d1f830
 }
