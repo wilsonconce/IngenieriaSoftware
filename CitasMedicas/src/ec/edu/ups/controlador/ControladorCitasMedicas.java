@@ -6,6 +6,7 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.conexion.Conexion;
+import ec.edu.ups.modelo.CitaMedica;
 import ec.edu.ups.modelo.Persona;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,11 +20,11 @@ public class ControladorCitasMedicas {
     private Persona persona;
 	private Conexion cnx;
 
-	public ControladorCitasMedicas(Persona persona) {
-		this.persona = persona;
+	public ControladorCitasMedicas() {
+	
 	}
 
-	public boolean agregar() {
+	public boolean agregar(CitaMedica m) {
 
 		PreparedStatement ps = null;
 		
@@ -34,12 +35,12 @@ public class ControladorCitasMedicas {
 			cnx = new Conexion();
 			Connection con = cnx.getConnection();
 			ps = con.prepareStatement(sql);
-			ps.setInt(1, 5);
-			ps.setString(2, "12:50");
-			ps.setString(3, "15:50");
-			ps.setInt(4, 5);
-			ps.setInt(5, 6);
-			ps.setInt(6, 8);
+			ps.setInt(1, m.getCm_duracion());
+			ps.setString(2, m.getCm_hora_fin());
+			ps.setString(3, m.getCm_hora_inicio());
+			ps.setInt(4, m.getCm_id());
+			ps.setString(5, m.getPaciente());
+			ps.setString(6, m.getCliente());
 			ps.execute();
 			con.close();
 			return true;
