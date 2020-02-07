@@ -131,8 +131,6 @@ public class ControladorPersona {
 		return listar;
 
 	}
-	
-<<<<<<< HEAD
 
 	public List<Persona> buscarPersona(Persona persona) {
 
@@ -163,8 +161,10 @@ public class ControladorPersona {
 			}
 
 		} catch (Exception e) {
-=======
-	
+			
+		}
+		return listar;
+	}
 	public void insertarPaciente(Paciente paciente) {
 
 		Conexion con = null;
@@ -188,18 +188,11 @@ public class ControladorPersona {
 		} catch (Exception e) {
 
 			e.printStackTrace();
->>>>>>> a7fd9acda05adb6ed57215c6de42782281d1f830
 		} finally {
 			con.desconectar();
 		}
 
-<<<<<<< HEAD
-		return listar;
+	}
 
-	}
-=======
-	}
-	
-	
->>>>>>> a7fd9acda05adb6ed57215c6de42782281d1f830
+
 }
