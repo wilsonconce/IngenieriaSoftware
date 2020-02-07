@@ -130,4 +130,42 @@ public class ControladorPersona {
 		return listar;
 
 	}
+	
+
+	public List<Persona> buscarPersona(Persona persona) {
+
+		Conexion con = null;
+		List<Persona> listar = new ArrayList<>();
+		String cedula=persona.getPer_cedula();
+
+		String sql = "select per_cedula, per_nombre, per_apellido, per_edad "
+				+ " from persona"
+				+ " Where per_cedula like '"+cedula+"'";
+
+		try {
+			con = new Conexion();
+			Connection reg = con.getConnection();
+			PreparedStatement rs = (PreparedStatement) reg.prepareStatement(sql);
+			ResultSet ps = rs.executeQuery();
+			while (ps.next()) {
+				Persona mo = new Persona();
+
+			
+				mo.setPer_cedula(ps.getString("per_cedula"));
+				mo.setPer_nombre(ps.getString("per_nombre"));
+				mo.setPer_apellido(ps.getString("per_apellido"));
+				mo.setPer_edad(ps.getInt("per_edad"));
+				
+				listar.add(mo);
+
+			}
+
+		} catch (Exception e) {
+		} finally {
+			con.desconectar();
+		}
+
+		return listar;
+
+	}
 }
