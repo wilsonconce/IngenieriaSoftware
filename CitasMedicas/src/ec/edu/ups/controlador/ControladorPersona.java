@@ -132,7 +132,6 @@ public class ControladorPersona {
 
 	}
 	
-<<<<<<< HEAD
 
 	public List<Persona> buscarPersona(Persona persona) {
 
@@ -151,19 +150,24 @@ public class ControladorPersona {
 			ResultSet ps = rs.executeQuery();
 			while (ps.next()) {
 				Persona mo = new Persona();
-
-			
-				mo.setPer_cedula(ps.getString("per_cedula"));
-				mo.setPer_nombre(ps.getString("per_nombre"));
-				mo.setPer_apellido(ps.getString("per_apellido"));
-				mo.setPer_edad(ps.getInt("per_edad"));
+				System.out.println(ps.getString(2)+ps.getInt(4));
+				mo.setPer_nombre(ps.getString(2));
+				mo.setPer_apellido(ps.getString(3));
+				mo.setPer_edad(ps.getInt(4));
 				
 				listar.add(mo);
 
 			}
 
 		} catch (Exception e) {
-=======
+		} finally {
+			con.desconectar();
+		}
+
+		return listar;
+
+		}
+
 	
 	public void insertarPaciente(Paciente paciente) {
 
@@ -188,18 +192,11 @@ public class ControladorPersona {
 		} catch (Exception e) {
 
 			e.printStackTrace();
->>>>>>> a7fd9acda05adb6ed57215c6de42782281d1f830
 		} finally {
 			con.desconectar();
 		}
 
-<<<<<<< HEAD
-		return listar;
-
-	}
-=======
-	}
+		}
 	
 	
->>>>>>> a7fd9acda05adb6ed57215c6de42782281d1f830
 }

@@ -7,7 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import ec.edu.ups.controlador.ControladorPersona;
+import ec.edu.ups.controlador.HistroialMedicoCtrl;
 import ec.edu.ups.controlador.reloj;
+import ec.edu.ups.modelo.Persona;
 
 public class HistorialMedicoPrincipal extends JFrame {
 
@@ -22,8 +25,12 @@ public class HistorialMedicoPrincipal extends JFrame {
 				try {
 					HistorialMedicoPrincipal frame = new HistorialMedicoPrincipal();
 					HistorialMedico hm= new HistorialMedico();
+					ControladorPersona ctrlPersona=new ControladorPersona();
+					Persona persona=new Persona();
 					reloj rlj=new reloj();
 					rlj.generarHora(hm);
+					HistroialMedicoCtrl hmc=new HistroialMedicoCtrl(hm, ctrlPersona,persona,frame);
+					
 					frame.getContentPane().add(hm);
 					frame.setVisible(true);
 				} catch (Exception e) {

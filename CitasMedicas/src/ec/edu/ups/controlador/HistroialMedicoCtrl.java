@@ -11,18 +11,30 @@ import org.w3c.dom.events.MouseEvent;
 
 import ec.edu.ups.modelo.Persona;
 import ec.edu.ups.vista.HistorialMedico;
+import ec.edu.ups.vista.HistorialMedicoPrincipal;
 
 public class HistroialMedicoCtrl implements ActionListener, MouseListener{
 
 	private HistorialMedico hisMed;
 	private ControladorPersona ctrlPersona;
 	private Persona persona;
-	 public HistroialMedicoCtrl(HistorialMedico hisMed, ControladorPersona ctrlPersona, Persona persona) {
+	private HistorialMedicoPrincipal hmp;
+	 public HistroialMedicoCtrl(HistorialMedico hisMed, ControladorPersona ctrlPersona, Persona persona, HistorialMedicoPrincipal hmp) {
 		// TODO Auto-generated constructor stub
 		 this.hisMed=hisMed;
 		 this.ctrlPersona=ctrlPersona;
 		 this.persona=persona;
+		 this.hisMed.btn_buscarPersona.addActionListener(this);
+		 this.hisMed.txtCIHM.addActionListener(this);
+		
 	}
+	 
+	 public void iniciar() {
+			hmp.setTitle("Historial Médico");
+			hmp.setLocationRelativeTo(null);
+			hmp.setVisible(false);
+		}
+	 
 	@Override
 	public void mouseClicked(java.awt.event.MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -53,10 +65,12 @@ public class HistroialMedicoCtrl implements ActionListener, MouseListener{
 		
 	}
 
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource()==hisMed.btn_buscarPersona || e.getSource()==hisMed.txtCIHM) {
+			//System.out.println("holaaaa");
 			listarPersona();
 		}
 	}
@@ -65,12 +79,14 @@ public class HistroialMedicoCtrl implements ActionListener, MouseListener{
 		
 		 ArrayList<Persona> recibir =(ArrayList<Persona>) ctrlPersona.buscarPersona(persona) ;
 		
-		String ced = hisMed.txtCIHM.getText().trim();
+		persona.setPer_cedula(hisMed.txtCIHM.getText()); 
 		
-
-		for (int i = 0; i < recibir.size(); i++) {
-
-			hisMed.txtNombreHM.setText(persona.getPer_nombre()+persona.getPer_apellido());
+		
+		
+		for(Persona persona:recibir) {
+			//System.out.println(persona.getPer_cedula()+persona.getPer_edad());
+			
+			hisMed.txtNombreHM.setText(persona.getPer_nombre()+" "+persona.getPer_apellido());
 			hisMed.txtEdadHM.setText(String.valueOf(persona.getPer_edad()));
 			//hisMed.txtFechaNacHM.setText(String.valueOf(persona.get));
 			/*Object[] fila = new Object[7];
