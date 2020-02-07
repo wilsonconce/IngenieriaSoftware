@@ -149,7 +149,7 @@ public class VentanaPrincipal extends JFrame {
 		});
 		btnAdministrador
 				.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/ec/edu/ups/sources/images/admin 64.png")));
-		btnAdministrador.setBounds(102, 355, 174, 138);
+		btnAdministrador.setBounds(101, 353, 174, 138);
 		btnAdministrador.setBorder(null);
 		btnAdministrador.setContentAreaFilled(false);
 		btnAdministrador.setPressedIcon(pressedIcon);
