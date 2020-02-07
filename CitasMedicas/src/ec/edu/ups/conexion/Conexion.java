@@ -14,7 +14,7 @@ public class Conexion {
 
 
 
-		private static final String url = "jdbc:mysql://localhost:3306/citasmedicas";
+		private static final String url = "jdbc:mysql://localhost:3310/citasmedicas";
 
 
 
