@@ -33,13 +33,13 @@ public class HistorialMedico extends JPanel {
 	String fechaMostrar;
 	private JLabel lblCiPersona;
 	public JTextField txtCIHM;
-	private JTextField txtNombreHM;
-	private JTextField txtFechaNacHM;
-	private JTextField txtEdadHM;
-	private JTable tblPatologia;
-	private JTextField txtIdPato;
-	private JTextField txtNombrePatolo;
-	private JTextField textField;
+	public JTextField txtNombreHM;
+	public JTextField txtFechaNacHM;
+	public JTextField txtEdadHM;
+	public JTable tblPatologia;
+	public JTextField txtIdPato;
+	public JTextField txtNombrePatolo;
+	public JTextField textField;
 	public JButton btnActualizarHM;
 	public JLabel lblHora_1;
 	public JLabel label;
@@ -58,6 +58,7 @@ public class HistorialMedico extends JPanel {
 				}
 			}
 		} catch (ClassNotFoundException ex) {
+<<<<<<< HEAD
 			java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (InstantiationException ex) {
 			java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -65,6 +66,15 @@ public class HistorialMedico extends JPanel {
 			java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+=======
+			java.util.logging.Logger.getLogger(HistorialMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+		} catch (InstantiationException ex) {
+			java.util.logging.Logger.getLogger(HistorialMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+		} catch (IllegalAccessException ex) {
+			java.util.logging.Logger.getLogger(HistorialMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+			java.util.logging.Logger.getLogger(HistorialMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+>>>>>>> 876bec0146183523a67f4ed84836dc8ba3bc7aac
 		}
 	 	
 	 	try {

@@ -11,6 +11,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import ec.edu.ups.conexion.Conexion;
+import ec.edu.ups.modelo.Paciente;
 import ec.edu.ups.modelo.Persona;
 
 public class ControladorPersona {
@@ -130,4 +131,75 @@ public class ControladorPersona {
 		return listar;
 
 	}
+	
+<<<<<<< HEAD
+
+	public List<Persona> buscarPersona(Persona persona) {
+
+		Conexion con = null;
+		List<Persona> listar = new ArrayList<>();
+		String cedula=persona.getPer_cedula();
+
+		String sql = "select per_cedula, per_nombre, per_apellido, per_edad "
+				+ " from persona"
+				+ " Where per_cedula like '"+cedula+"'";
+
+		try {
+			con = new Conexion();
+			Connection reg = con.getConnection();
+			PreparedStatement rs = (PreparedStatement) reg.prepareStatement(sql);
+			ResultSet ps = rs.executeQuery();
+			while (ps.next()) {
+				Persona mo = new Persona();
+
+			
+				mo.setPer_cedula(ps.getString("per_cedula"));
+				mo.setPer_nombre(ps.getString("per_nombre"));
+				mo.setPer_apellido(ps.getString("per_apellido"));
+				mo.setPer_edad(ps.getInt("per_edad"));
+				
+				listar.add(mo);
+
+			}
+
+		} catch (Exception e) {
+=======
+	
+	public void insertarPaciente(Paciente paciente) {
+
+		Conexion con = null;
+
+		String INSERT_TBL_PERSONA = "INSERT INTO paciente ( pac_per_id, pac_fecha_registro)"
+				+ "VALUES (?,?);";
+
+		try {
+
+			con = new Conexion();
+			Connection reg = con.getConnection();
+
+			PreparedStatement insert_persona = (PreparedStatement) reg.prepareStatement(INSERT_TBL_PERSONA);
+
+		
+			insert_persona.setInt(1, paciente.getPac_per_id());
+			insert_persona.setString(2, paciente.getPac_fecha_registro());
+			
+			insert_persona.execute();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+>>>>>>> a7fd9acda05adb6ed57215c6de42782281d1f830
+		} finally {
+			con.desconectar();
+		}
+
+<<<<<<< HEAD
+		return listar;
+
+	}
+=======
+	}
+	
+	
+>>>>>>> a7fd9acda05adb6ed57215c6de42782281d1f830
 }
