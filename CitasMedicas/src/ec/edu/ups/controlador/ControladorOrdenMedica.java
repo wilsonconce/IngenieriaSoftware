@@ -18,7 +18,11 @@ public class ControladorOrdenMedica {
 		String sql = "INSERT INTO ordenmedica (om_med_id,om_pac_id, om_diagnostico, om_cm_id, om_mdmt_id, om_fecha_inicio, om_fecha_fin)"
 				+ "VALUES (?,?,?,?,?,?,?)";
 
-		String sql_idMedico = "SELECT med_id FROM medico WHERE 1";
+		//String sql_idMedico = "SELECT med_id FROM medico WHERE 1";
+		String sql_idMedico = "Select m.med_id, m.med_per_id, p.per_id, p.per_nombre \r\n" + 
+				"From Persona p, Medico m\r\n" + 
+				"Where m.med_per_id=p.per_id;";
+		
 		String sql_idPaciente = "SELECT pac_id FROM paciente WHERE 1";
 		String sql_idMedicamento = "SELECT mdmt_id FROM medicamento WHERE 1";
 		String sql_idcitaMedica = "SELECT cm_id FROM citamedica WHERE 1";
@@ -40,7 +44,7 @@ public class ControladorOrdenMedica {
 			PreparedStatement insert_ordenMedica = (PreparedStatement) reg.prepareStatement(sql);
 
 			while (result1.next()) {
-				int med_id_bd = Integer.parseInt(result1.getString("med_id"));
+				int med_id_bd = Integer.parseInt(result1.getString(1));
 				insert_ordenMedica.setInt(1, med_id_bd);
 			}
 			while (result2.next()) {

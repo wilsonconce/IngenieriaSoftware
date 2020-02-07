@@ -132,6 +132,11 @@ public class VistaOrdenMedica extends JFrame {
 		label_4.setForeground(new Color(255, 255, 255));
 		label_4.setBounds(294, 84, 127, 14);
 		panelTransparente.add(label_4);
+		
+		JComboBox comboBox_Medicos = new JComboBox();
+		comboBox_Medicos.setBounds(111, 97, 127, 20);
+		panelTransparente.add(comboBox_Medicos);
+		llenarComboBoxMedicos(comboBox_Medicos);
 
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(111, 32, 127, 20);
@@ -143,6 +148,7 @@ public class VistaOrdenMedica extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				String medicamento = comboBox.getSelectedItem() + "";
 				String diagnostico = txt_Diagnostico.getText();
+				String name_Medico = comboBox_Medicos.getSelectedItem()+"";
 
 				String dia = Integer.toString(fecha_1.getCalendar().get(Calendar.DAY_OF_MONTH));
 				String mes = Integer.toString(fecha_1.getCalendar().get(Calendar.MONTH) + 1);
@@ -154,7 +160,7 @@ public class VistaOrdenMedica extends JFrame {
 				String year_2 = Integer.toString(fecha_2.getCalendar().get(Calendar.YEAR));
 				String fechaFin = (year + "/" + mes + "/" + dia);
 
-				OrdenMedica ordenMedica = new OrdenMedica(1, medicamento, diagnostico, fechaInicio, fechaFin);
+				OrdenMedica ordenMedica = new OrdenMedica(1, medicamento, diagnostico, fechaInicio, fechaFin, name_Medico);
 				ControladorOrdenMedica ctlOrdenMedica = new ControladorOrdenMedica();
 				ctlOrdenMedica.insertarOrdenMedica(ordenMedica);
 
@@ -168,10 +174,7 @@ public class VistaOrdenMedica extends JFrame {
 		lblMedico.setBounds(26, 100, 75, 14);
 		panelTransparente.add(lblMedico);
 
-		JComboBox comboBox_Medicos = new JComboBox();
-		comboBox_Medicos.setBounds(111, 97, 127, 20);
-		panelTransparente.add(comboBox_Medicos);
-		llenarComboBoxMedicos(comboBox_Medicos);
+
 
 	}
 
