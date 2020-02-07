@@ -29,6 +29,10 @@ public class VentanaPrincipal extends JFrame {
 	Icon pressedIcon = new ImageIcon(VentanaPrincipal.class.getResource("/ec/edu/ups/sources/images/admin96.png"));
 
 	Icon pressedIcon2 = new ImageIcon(VentanaPrincipal.class.getResource("/ec/edu/ups/sources/images/agendarG.png"));
+	
+	Icon pressedIcon3 = new ImageIcon(VentanaPrincipal.class.getResource("/ec/edu/ups/sources/images/histo96.png"));
+	
+	Icon pressedIcon4 = new ImageIcon(VentanaPrincipal.class.getResource("/ec/edu/ups/sources/images/ordenMG.png"));
 
 	/**
 	 * Launch the application.
@@ -75,6 +79,35 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/ec/edu/ups/sources/images/ordenMP.png")));
+		btnNewButton_1.setContentAreaFilled(false);
+		btnNewButton_1.setPressedIcon(pressedIcon4);
+		btnNewButton_1.setBorder(null);
+		btnNewButton_1.setBounds(710, 397, 99, 60);
+		contentPane.add(btnNewButton_1);
+		
+		JLabel lblOrdenMdica = new JLabel("Orden M\u00E9dica");
+		lblOrdenMdica.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblOrdenMdica.setBounds(710, 353, 116, 16);
+		contentPane.add(lblOrdenMdica);
+		
+		JLabel lblHistorialMdico = new JLabel("Historial M\u00E9dico");
+		lblHistorialMdico.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblHistorialMdico.setBounds(506, 352, 133, 16);
+		contentPane.add(lblHistorialMdico);
+		btnNewButton.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/ec/edu/ups/sources/images/histo64.png")));
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.setPressedIcon(pressedIcon3);
+		btnNewButton.setBounds(527, 383, 86, 85);
+		contentPane.add(btnNewButton);
 
 		JLabel lblBienvenido = new JLabel("Bienvenido");
 		lblBienvenido.setFont(new Font("Tahoma", Font.BOLD, 99));
@@ -84,12 +117,12 @@ public class VentanaPrincipal extends JFrame {
 
 		JLabel lblAgendarCita = new JLabel("Agendar Cita");
 		lblAgendarCita.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblAgendarCita.setBounds(98, 380, 116, 30);
+		lblAgendarCita.setBounds(327, 345, 116, 30);
 		contentPane.add(lblAgendarCita);
 
 		JLabel lblAdministrador = new JLabel("Administrador");
 		lblAdministrador.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblAdministrador.setBounds(86, 184, 116, 30);
+		lblAdministrador.setBounds(131, 345, 116, 30);
 		contentPane.add(lblAdministrador);
 
 		JButton btnAgendarCita = new JButton("");
@@ -99,7 +132,7 @@ public class VentanaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnAgendarCita.setBounds(51, 350, 174, 185);
+		btnAgendarCita.setBounds(288, 327, 174, 185);
 		btnAgendarCita.setContentAreaFilled(false);
 		btnAgendarCita.setPressedIcon(pressedIcon2);
 		btnAgendarCita.setBorder(null);
@@ -116,7 +149,7 @@ public class VentanaPrincipal extends JFrame {
 		});
 		btnAdministrador
 				.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/ec/edu/ups/sources/images/admin 64.png")));
-		btnAdministrador.setBounds(51, 163, 174, 185);
+		btnAdministrador.setBounds(102, 355, 174, 138);
 		btnAdministrador.setBorder(null);
 		btnAdministrador.setContentAreaFilled(false);
 		btnAdministrador.setPressedIcon(pressedIcon);

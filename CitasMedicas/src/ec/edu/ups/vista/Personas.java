@@ -102,6 +102,18 @@ public class Personas extends JFrame {
 				limpiarCampos();
 				listarPers();
 				JOptionPane.showMessageDialog(null, "Gracias");
+				
+				lblCdula.setText("Cédula");
+				lblNombre.setText("Nombres");
+				lblApellidos.setText("Apellidos");
+				
+				txtEdad.setEnabled(true);
+				txtDireccion.setEnabled(true);
+				txtTelefono.setEnabled(true);
+			
+				btnAgregar.setEnabled(true);
+				btnEliminar.setEnabled(true);
+				btnModificar.setEnabled(true);
 			
 			}
 		});
