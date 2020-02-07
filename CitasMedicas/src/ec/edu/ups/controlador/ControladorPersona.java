@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -14,14 +16,9 @@ import ec.edu.ups.modelo.Persona;
 public class ControladorPersona {
 
 	public void insertarPersona(Persona persona) {
-	//	 Conexion cnx = new Conexion();
+
 		Conexion con = null;
 
-//		  String INSERT_TBL_PERSONA = "INSERT INTO PERSONA"
-//	                + "	(PER_CEDULA, PER_NOMBRE, PER_APELLIDO, PER_EDAD, "
-//	                + "PER_DIRECCIION, PER_TELEFONO) "
-//	                + "VALUES"
-//	                + "	(?, ?, ?, ?, ?, ?);";
 		String INSERT_TBL_PERSONA = "INSERT INTO persona ( per_cedula, per_nombre, per_apellido, per_edad, per_direccion, per_telefono)"
 				+ "VALUES (?,?,?,?,?,?);";
 
@@ -41,11 +38,96 @@ public class ControladorPersona {
 			insert_persona.execute();
 
 		} catch (Exception e) {
-			// TODO: handle exception
+
 			e.printStackTrace();
 		} finally {
 			con.desconectar();
 		}
+
+	}
+
+	public void Actualizar(Persona persona, String cedula) {
+
+		Conexion con = null;
+
+		String sql = "update  persona  set per_nombre=?, per_apellido=?, per_edad=?, per_direccion=?, per_telefono=?  where per_cedula like "
+				+ cedula;
+
+		try {
+
+			con = new Conexion();
+			Connection reg = con.getConnection();
+
+			PreparedStatement rs = (PreparedStatement) reg.prepareStatement(sql);
+			rs.setString(1, persona.getPer_nombre());
+			rs.setString(2, persona.getPer_apellido());
+			rs.setInt(3, persona.getPer_edad());
+			rs.setString(4, persona.getPer_direccion());
+			rs.setString(5, persona.getPer_telefono());
+			rs.executeUpdate();
+
+		} catch (Exception e) {
+
+		} finally {
+			con.desconectar();
+		}
+
+	}
+
+	public void eliminarPersona(String cedula) {
+		Conexion con = null;
+		int res = 0;
+
+		String sql = "delete from persona where per_cedula like" + cedula;
+
+		try {
+
+			con = new Conexion();
+			Connection reg = con.getConnection();
+			PreparedStatement rs = (PreparedStatement) reg.prepareStatement(sql);
+			int ps = rs.executeUpdate();
+
+		} catch (Exception exe) {
+			exe.printStackTrace();
+		} finally {
+			con.desconectar();
+		}
+
+	}
+
+	public List<Persona> listarPersona() {
+
+		Conexion con = null;
+		List<Persona> listar = new ArrayList<>();
+		System.out.println("llego");
+
+		String sql = "select * from persona";
+
+		try {
+			con = new Conexion();
+			Connection reg = con.getConnection();
+			PreparedStatement rs = (PreparedStatement) reg.prepareStatement(sql);
+			ResultSet ps = rs.executeQuery();
+			while (ps.next()) {
+				Persona mo = new Persona();
+
+				mo.setPer_id(ps.getInt("per_id"));
+				mo.setPer_cedula(ps.getString("per_cedula"));
+				mo.setPer_nombre(ps.getString("per_nombre"));
+				mo.setPer_apellido(ps.getString("per_apellido"));
+				mo.setPer_edad(ps.getInt("per_edad"));
+				mo.setPer_direccion(ps.getString("per_direccion"));
+				mo.setPer_telefono(ps.getString("per_telefono"));
+				listar.add(mo);
+
+			}
+
+		} catch (Exception e) {
+		} finally {
+			con.desconectar();
+		}
+
+		return listar;
 
 	}
 }
