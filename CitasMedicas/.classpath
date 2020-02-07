@@ -16,6 +16,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="D:/Users/leand/OneDrive/Documentos/GitHub/IngenieriaSoftware/CitasMedicas/Jcalendar/lib/jcalendar-1.4.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/usuario/Documents/ProGitHub/IngenieriaSoftware/CitasMedicas/src/ec/edu/ups/sources/images/jcalendar-1.4.jar"/>
+>>>>>>> 38ac3ebb05cd768fbbc046d585b52525790eb50b
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
